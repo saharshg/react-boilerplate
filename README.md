@@ -1,8 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Node version
+Node version used for this boilerplate: [10.15.3]
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run lint` or `yarn lint`
+
+Runs eslint for src/ folder
 
 ### `npm start`
 
