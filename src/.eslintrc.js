@@ -9,6 +9,10 @@ module.exports = {
         "fetch": true,
         "navigator": true,
         "window": true,
-        "document": true
-    }
+        "document": true,
+        "describe": true,
+        "jest": true,
+        "expect": true
+    },
+    "plugins": ["import"]
 };
