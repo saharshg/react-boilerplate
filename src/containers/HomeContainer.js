@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
 
 import Home from '../scenes/Home';
-import getOrders from '../actions/actionGetOrders';
+import getComments from '../actions/actionGetComments';
 
 const mapStateToProps = state => ({
-  shop: state.ordersData ? state.ordersData.shop : null,
+  comments: state.comments.data || [],
+  commentsLoading: state.isLoading,
 });
 
 const mapDispatchToProps = dispatch => ({
-  getOrdersFunction: () => dispatch(getOrders()),
+  getCommentsFunction: () => dispatch(getComments()),
 });
 
 const HomeContainer = connect(

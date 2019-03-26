@@ -1,27 +1,24 @@
 export default function (state = [], action = {}) {
   switch (action.type) {
-    case 'GET_ORDERS_LOADING':
+    case 'GET_COMMENTS_PENDING':
       return {
         ...state,
         isLoading: true,
-        success: false,
         error: false,
       };
 
-    case 'GET_ORDERS_SUCCESS':
+    case 'GET_COMMENTS_FULFILLED':
       return {
         ...state,
         isLoading: false,
-        success: true,
-        ordersData: action.payload.data,
+        data: action.payload.data,
         error: false,
       };
 
-    case 'GET_ORDERS_ERROR':
+    case 'GET_COMMENTS_REJECTED':
       return {
         ...state,
         isLoading: false,
-        success: false,
         error: true,
       };
 

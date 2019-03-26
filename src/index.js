@@ -14,7 +14,7 @@ const store = configureStore();
 ReactDOM.render((
   <Provider store={store}>
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={'Loading...'}>
         <Switch>
           <Route exact path="/" component={HomeContainer} />
         </Switch>

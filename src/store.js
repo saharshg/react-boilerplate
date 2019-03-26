@@ -1,16 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { createPromise } from 'redux-promise-middleware';
+import promise from 'redux-promise-middleware';
 import thunk from 'redux-thunk';
 import persistState from 'redux-localstorage';
 import rootReducer from './reducers';
-
-const promise = createPromise({
-  types: {
-    fulfilled: 'success',
-    pending: 'loading',
-    rejected: 'error',
-  },
-});
 
 const createStoreWithMiddleware = compose(
   applyMiddleware(
