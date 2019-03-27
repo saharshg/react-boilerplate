@@ -2,7 +2,14 @@ import React from 'react';
 import { Table } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-const CommentsList = (props) => {
+interface Comment {
+  id: number,
+  name: string,
+  email: string,
+  body: string
+}
+
+const CommentsList = (props: { comments: Comment[] }) => {
   const { comments } = props;
 
   return (

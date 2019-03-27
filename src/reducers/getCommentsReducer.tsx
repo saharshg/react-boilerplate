@@ -1,4 +1,7 @@
-export default function (state = [], action = {}) {
+const defaultState: object = [];
+const defaultAction: { type: string, payload: { data: [] }} = { type: '', payload: { data: [] } };
+
+export default function (state = defaultState, action = defaultAction) {
   switch (action.type) {
     case 'GET_COMMENTS_PENDING':
       return {
