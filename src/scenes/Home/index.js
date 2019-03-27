@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import PropTypes from 'prop-types';
-import CommentsList from './CommentsList';
+import { Container } from 'reactstrap';
+// const CommentsList = lazy(() => import('./CommentsList'));
+const AddCommentForm = lazy(() => import('./AddCommentForm/AddCommentForm'));
 
 class Home extends React.PureComponent {
   constructor(props) {
@@ -19,19 +21,29 @@ class Home extends React.PureComponent {
   }
 
   componentDidMount() {
-    const { getCommentsFunction } = this.props;
-    getCommentsFunction();
+    // const { getCommentsFunction } = this.props;
+    // getCommentsFunction();
+  }
+
+  handleSubmit = () => {
+    const { addCommentAction, commentFormValues } = this.props;
+    addCommentAction(commentFormValues);
   }
 
   render() {
-    const { comments } = this.state;
+    // const { comments } = this.state;
     const { commentsLoading } = this.props;
 
     if (commentsLoading) {
       return (<>Loading...</>);
     }
 
-    return (<CommentsList comments={comments} />);
+    return (
+      <Container>
+        <AddCommentForm handleSubmit={this.handleSubmit} />
+        {/* <CommentsList comments={comments} /> */}
+      </Container>
+    );
   }
 }
 
@@ -39,6 +51,7 @@ Home.defaultProps = {
   comments: [{}],
 };
 Home.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   comments: PropTypes.array,
   getCommentsFunction: PropTypes.func.isRequired,
   commentsLoading: PropTypes.bool.isRequired,

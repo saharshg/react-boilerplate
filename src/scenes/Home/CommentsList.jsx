@@ -33,7 +33,8 @@ CommentsList.defaultProps = {
   comments: [],
 };
 CommentsList.propTypes = {
-  comments: [PropTypes.object.isRequired],
+  // eslint-disable-next-line react/forbid-prop-types
+  comments: PropTypes.array,
 };
 
 export default CommentsList;

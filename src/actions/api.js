@@ -1,11 +1,8 @@
 import axios from 'axios';
 
 export default axios.create({
-  withCredentials: true,
-  baseURL: 'https://jsonplaceholder.typicode.com',
-  crossDomain: true,
+  baseURL: 'https://us-central1-react-boilerplate-d8946.cloudfunctions.net',
   headers: {
-    'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
   },
 });
