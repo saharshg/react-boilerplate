@@ -3,6 +3,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Node version
 Node version used for this boilerplate: [10.15.3]
 
+## Typescript
+
+Clone from branch: 'react-boilerplate-ts' for typed codebase
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -18,6 +22,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
+
+### `npm run test` or `yarn test`
+
+Runs Jest Enzyme tests from src/ files
 
 ### `npm run build` or `yarn build`
 
