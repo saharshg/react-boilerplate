@@ -1,0 +1,61 @@
+.app-base{
+  display: flex;
+  width: 100%;
+  background-color: #f5f6f9;
+}
+.app-base .app{
+  width: 540px;
+  height: 400px;
+  margin: 85px auto;
+  padding: 25px;
+  box-shadow: 1px 1.732px 5px rgba(6,8,8,0.1);
+  background-color: #ffffff;
+  border: 1px solid #e7ebed;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    width: 200px;
+    margin: 5px auto;
+  }
+}
+
+.app-base .app .app-title{
+  font-size: 30px;
+  color: #263344;
+  margin: 0px auto 35px auto;
+}
+
+.app-base .app .invalid-feedback{
+  margin-left: 16%;
+  width: 50%;
+}
+
+
+.app-base .app .app-btn{
+  flex: 1;
+  margin: auto;
+  display: flex;
+}
+.app-base .app .app-btn .btn-app{
+  height: 38px;
+  margin: auto;
+  width: 370px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #253244;
+  border: 0px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 767px){
+  .app-base{
+      padding: 15px;
+      overflow-x: hidden;
+  }
+  .app-base .app{
+      width: 100%;
+      padding: 15px;
+  }
+}

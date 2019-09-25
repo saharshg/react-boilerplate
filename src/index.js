@@ -1,25 +1,18 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store';
-
-const HomeContainer = lazy(() => import('./containers/HomeContainer'));
+import Routes from './routes';
 
 const store = configureStore();
 
+
 ReactDOM.render((
   <Provider store={store}>
-    <Router>
-      <Suspense fallback={'Loading...'}>
-        <Switch>
-          <Route exact path="/" component={HomeContainer} />
-        </Switch>
-      </Suspense>
-    </Router>
+    <Routes />
   </Provider>
 ), document.getElementById('root'));
 
