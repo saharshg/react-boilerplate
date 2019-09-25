@@ -23,7 +23,10 @@ const App = (props) => {
         </Button>
 
         <div className="app-title">Or</div>
-        <Button color="warning">
+        <Button
+          color="warning"
+          onClick={() => history.push('/login')}
+        >
           Login
         </Button>
       </div>

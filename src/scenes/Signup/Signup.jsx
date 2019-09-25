@@ -1,5 +1,6 @@
 import React from 'react';
 import OwnerFormContainer from './OwnerForm/OwnerForm';
+import BuyerFormContainer from './BuyerForm/BuyerForm';
 
 const Signup = () => {
   const { location } = window;
@@ -8,7 +9,13 @@ const Signup = () => {
       <OwnerFormContainer />
     );
   }
-  return <>Buyer</>;
+
+  if (location.pathname === '/signup/buyer') {
+    return (
+      <BuyerFormContainer />
+    );
+  }
+  return 'Login again';
 };
 
 export default Signup;

@@ -1,13 +1,13 @@
 export default function (state = [], action = {}) {
   switch (action.type) {
-    case 'ADD_COMMENT_PENDING':
+    case 'SIGNUP_PENDING':
       return {
         ...state,
         isLoading: true,
         error: false,
       };
 
-    case 'ADD_COMMENT_FULFILLED':
+    case 'SIGNUP_FULFILLED':
       return {
         ...state,
         isLoading: false,
@@ -16,7 +16,7 @@ export default function (state = [], action = {}) {
         error: false,
       };
 
-    case 'ADD_COMMENT_REJECTED':
+    case 'SIGNUP_REJECTED':
       return {
         ...state,
         isLoading: false,

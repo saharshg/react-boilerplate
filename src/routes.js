@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 
 import App from './scenes/App/App';
 import Signup from './scenes/Signup/Signup';
+import Login from './scenes/Login/Login';
 import interceptor from './utils/interceptor';
 
 const loggedIn = () => {
@@ -68,6 +69,7 @@ export default () => (
         <Route exact path="/" component={App} />
         <Route exact path="/signup/owner" component={Signup} />
         <Route exact path="/signup/buyer" component={Signup} />
+        <Route exact path="/login" component={Login} />
         <PrivateRoute authed={requireAuth} path="/" component={renderRoutes} />
       </Switch>
     </Suspense>

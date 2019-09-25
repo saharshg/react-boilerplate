@@ -15,36 +15,33 @@ import {
   email,
   password,
   confirmPassword,
-  exact5,
 } from '../../../utils/formUtils/validator';
 import signupAction from '../../../actions/signup';
 import '../style.scss';
 
-const OwnerForm = (props) => {
+const BuyerForm = (props) => {
   const {
     handleSubmit,
     pristine,
     reset,
     submitting,
     signup,
+    history,
   } = props;
 
-  const onFormSubmit = (values) => {
-    const { name, email, password, restaurantName, restaurantZipcode, cuisine } = values;
+  const onFormSubmit = (values = {}) => {
+    const { name, email, password } = values;
     let formData = new FormData();
     formData.append('name', name);
     formData.append('email', email);
     formData.append('password', password);
-    formData.append('restaurantName', restaurantName);
-    formData.append('restaurantZipcode', restaurantZipcode);
-    formData.append('cuisine', cuisine);
-    formData.append('type', 'owner');
+    formData.append('type', 'buyer');
     signup(formData);
   };
 
   return (
     <Form onSubmit={handleSubmit(onFormSubmit)}>
-      <h2 className="text-center">Owner Signup</h2>
+      <h2 className="text-center">Buyer Signup</h2>
       <Row className="formRow">
         <Col>
           <Field
@@ -65,6 +62,7 @@ const OwnerForm = (props) => {
           />
         </Col>
       </Row>
+
       <Row className="formRow">
         <Col>
           <Field
@@ -85,37 +83,7 @@ const OwnerForm = (props) => {
           />
         </Col>
       </Row>
-      <Row className="formRow">
-        <Col>
-          <Field
-            name="restaurantName"
-            component={renderField}
-            validate={[required]}
-            type="text"
-            label="Restaurant Name"
-          />
-        </Col>
-        <Col>
-          <Field
-            name="restaurantZipcode"
-            component={renderField}
-            type="text"
-            validate={[required, exact5]}
-            label="Restaurant Zipcode"
-          />
-        </Col>
-      </Row>
-      <Row className="formRow">
-        <Col>
-          <Field
-            name="cuisine"
-            component={renderField}
-            type="text"
-            validate={[required]}
-            label="Cuisine"
-          />
-        </Col>
-      </Row>
+
       <Row className="formRow">
         <Col>
           <Button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</Button>
@@ -126,15 +94,15 @@ const OwnerForm = (props) => {
   );
 };
 
-const OwnerFormWrapper = reduxForm({
+const BuyerFormWrapper = reduxForm({
   // a unique name for the form
-  form: 'ownerForm',
-})(OwnerForm);
+  form: 'buyerForm',
+})(BuyerForm);
 
 const mapStateToProps = (state) => {
-  const { form: { ownerForm: { values } = {} } = {} } = state;
+  const { form: { buyerForm: { values } = {} } = {} } = state;
   return ({
-    ownerForm: values,
+    buyerForm: values,
   });
 };
 
@@ -142,12 +110,12 @@ const mapDispatchToProps = (dispatch) => ({
   signup: (payload) => dispatch(() => signupAction(payload)),
 });
 
-const OwnerFormContainer = connect(
+const BuyerFormContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(OwnerFormWrapper);
+)(BuyerFormWrapper);
 
-OwnerForm.defaultProps = {
+BuyerForm.defaultProps = {
   handleSubmit: () => {},
   error: false,
   pristine: false,
@@ -155,7 +123,7 @@ OwnerForm.defaultProps = {
   submitting: false,
 };
 
-OwnerForm.propTypes = {
+BuyerForm.propTypes = {
   handleSubmit: PropTypes.func,
   error: PropTypes.bool,
   pristine: PropTypes.bool,
@@ -163,4 +131,4 @@ OwnerForm.propTypes = {
   submitting: PropTypes.bool,
 };
 
-export default OwnerFormContainer;
+export default BuyerFormContainer;

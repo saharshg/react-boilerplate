@@ -25,7 +25,7 @@ const minLength = min => (value) => {
   );
 };
 
-const exact = length => value => (value === length ? `Must be exact ${length} characters` : undefined);
+const exact = length => value => (value.length < length || value.length > length) ? `Must be exact ${length} digits` : undefined;
 
 const exact5 = exact(5);
 
