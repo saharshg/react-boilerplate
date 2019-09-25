@@ -26,7 +26,6 @@ const BuyerForm = (props) => {
     reset,
     submitting,
     signup,
-    history,
   } = props;
 
   const onFormSubmit = (values = {}) => {

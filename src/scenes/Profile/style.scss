@@ -1,0 +1,361 @@
+.bgPlaceholder {
+  width: 120px;
+  height: 102px;
+  position: absolute;
+  top: 93px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.btn-outline-secondary {
+  color: #6c757d !important;
+  background: #fff !important;
+  border-color: #6c757d !important;
+}
+
+.btn-outline-secondary:hover {
+  color: #fff !important;
+  background: #6c757d !important;
+  border-color: #6c757d !important;
+}
+
+#editPrimaryPicModal {
+  .modal-header {
+    background-color: #33363d;
+    color: #fff;
+    padding: 0.3rem;
+
+    .modal-title {
+      margin-left: 15px;
+      font-weight: 400;
+    }
+  }
+  .modal-content {
+    .modal-body {
+      text-align: center;
+
+      .badge {
+        margin-left: -330px;
+        margin-top: 240px;
+        opacity: 0.8;
+        position: absolute;
+        padding: 5px;
+        border: 1px solid #6c757d;
+        color: #fff;
+        background-color: #6c757d80;
+
+        i {
+          padding: 3px;
+        }
+      }
+    }
+
+    .modal-footer {
+      .fa.fa-minus, .fa.fa-plus {
+        cursor: pointer;
+        font-size: 9px;
+        line-height: 9px;
+        border: 2px solid grey;
+        color: grey;
+        border-radius: 50%;
+        padding: 2px 2px;
+        display: inline-table;
+      }
+
+      .btn-secondary {
+        padding: 4px 10px;
+        font-size: 15px;
+        background-color: #3B414A;
+      }
+
+      .ml120 {
+        margin-left: 120px;
+      }
+
+      .input-range {
+        width: 100px;
+        margin: 0 12px;
+
+        .input-range__label {
+          display: none;
+        }
+        .input-range__slider {
+          background: none;
+          border: 3.5px solid grey;
+        }
+
+        .input-range__track--active {
+          background: grey;
+        }
+      }
+    }
+  }
+}
+
+.profile {
+  .card-body {
+    width: 100%;
+    padding: 1rem;
+
+    div {
+      align-self: baseline;
+    }
+
+    .help_text {
+      color: #868B91;
+      padding-left: 0;
+    }
+
+    .user-name {
+      padding-left: 15px;
+    }
+
+    .profile-description {
+      textarea.form-control {
+        height: 150px;
+      }
+
+      .edit_icon{
+        align-self: baseline;
+      }
+    }
+
+    .form-group {
+      margin-top: 1rem;
+    }
+
+    .row_detail {
+      margin-bottom: 15px;
+    }
+
+    .setting_details {
+      margin: 3px auto;
+    }
+
+    .imagePanel {
+      margin-top: -15px;
+      margin-bottom: 15px;
+
+      .card-header {
+        padding: 0;
+        color: #F5F6F9;
+        width: 100%;
+        justify-content: center;
+
+        canvas {
+          position: absolute;
+          left: 0px;
+          top: 0px;
+        }
+      }
+
+      .card-body {
+        padding: 0.6rem;
+        button {
+          padding: 4px 10px;
+          font-size: 15px;
+          background-color: #3B414A;
+        }
+
+        .form-group {
+          margin: 0;
+        }
+
+        .backgroundPic {
+          background-color: #3B414A;
+          width: 128px;
+          cursor: pointer;
+          font-size: 14px;
+          padding: 7px;
+          color: #fff;
+          border-radius: 5px;
+
+          label {
+            margin-bottom: 0;
+          }
+
+          svg {
+            height: 15px;
+          }
+        }
+
+        .profilePic {
+          width: 148px;
+          height: 148px;
+          border: 4px solid #fff;
+          border-radius: 50%;
+          position: absolute;
+          background: #F5F6F9;
+          bottom: 26px;
+          left: 22px;
+          overflow: hidden;
+
+          .fa.fa-spinner {
+            margin-top: 55px;
+            margin-right: 55px;
+            font-size: 30px;
+            color: #fff;
+          }
+
+          .primaryPic {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-size: contain !important;
+            background-repeat: no-repeat;
+          }
+
+          .primaryPic.blurImage {
+            opacity: 0.5;
+          }
+
+          .profile-placeholder {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            background-size: contain;
+            left: 0;
+          }
+
+          .updateProfilePic label {
+            cursor: pointer;
+            bottom: 0;
+            margin: auto;
+            left: 0;
+            right: 0;
+            width: 100%;
+            text-align: center;            
+            display: flex;
+            flex-direction: column;            
+            padding: 7px;
+            
+            height: 54px;
+            color: #fff;
+            position: absolute;
+            svg {
+              position: absolute;
+              margin: auto;
+              left: 0;
+              right: 0;
+              opacity: 0.5;
+              transition: all 0.3s ease-in-out;
+            }
+            span {
+              opacity: 0;
+              font-size: 14px;
+              margin-top: 20px;
+              transition: all 0.3s ease-in-out;
+            }
+            * {
+              transition: all 0.2s ease-in-out;
+            }
+          }
+        
+          &:hover .updateProfilePic label {
+            background: rgba(0, 0, 0, 0.27);
+            span, svg {
+              opacity: 1;
+            }
+          }           
+        }
+      }
+
+      .picture {
+        text-align: center;
+        background-size: cover;
+        height: 300px;
+        .backgroundPic {
+          height: 300px;
+          background-size: contain !important;
+          background-repeat: no-repeat;
+        }
+
+        .fa.fa-spinner {
+          bottom: 150px;
+          position: relative;
+          font-size: 30px;
+        }
+
+        .backgroundPic.blurImage {
+          opacity: 0.5;
+        }
+
+        .badge {
+          opacity: 0.8;
+          position: relative;
+          margin-left: -65px;
+          padding: 5px;
+          margin-top: 130px;
+          border: 1px solid #6c757d;
+          color: #fff;
+          background-color: #6c757d80;
+          i {
+            padding: 3px;
+          }
+        }
+  
+        .placeholder {
+          svg {
+            display: -webkit-inline-flex;
+            display: inline-flex;
+            object-fit: contain;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-align-items: center;
+            align-items: center;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 140px;
+            width: 120px;
+          }
+        }
+      }
+    }
+  }
+
+  .borderBottom {
+    border-bottom: 2px solid #F5F6FA;
+    margin-bottom: 15px;
+  }
+  
+  .fs-20 {
+    font-size: 18px;
+    line-height: 1.3;
+    padding-left: 0;
+  }
+  .setting_description {
+    align-self: baseline;
+
+    .form-group {
+      margin-bottom: 0px;
+
+      input, textarea{
+        border-color: #39424A;
+      }
+    }
+
+    .edit_icon {
+      text-align: end;
+      span {
+        padding: 0.4rem;
+      }
+    }
+
+    .bg_picture{
+      img{
+        max-height:80px ;
+      }
+    }
+
+    svg {
+      height: 15px;
+      width: 15px;
+      cursor: pointer;
+    }
+    .btn-outline-secondary {
+      width: 200px;
+    }
+  }
+}

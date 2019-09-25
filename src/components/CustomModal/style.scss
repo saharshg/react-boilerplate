@@ -1,0 +1,207 @@
+.modal-dialog.end-Premium-Modal {
+    max-width: 450px;
+}
+
+.modal-content {
+  width: auto !important;
+  height: auto !important;
+}
+
+.modal-body {
+  width: 75%;
+  margin: 0 auto;
+}
+    
+.end-Premium-Modal, .tip-Modal {    
+    .modal-content {
+        position: relative !important;
+        height:auto !important;
+        font-size: 14px !important;
+        line-height: 20px;
+        font-weight: 500;
+        font-family: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"';
+        // color: #3b414a;        
+        
+        border-radius: 1em;
+    }
+    
+    .chat-modal-header {
+        border-bottom: none;        
+        padding:0 1rem;
+
+        img {
+            opacity: 1 !important;
+        }
+
+        .close {
+            margin-top:0rem !important;
+            color:#C4C4C4;
+            font-weight: 300;
+            font-size: 28px;
+            padding-top: 7px;
+            position: absolute;
+            top: 0px;
+            right: 15px;
+        }
+    }
+    .modal-center-img {
+        width: 47px;
+        height: 47px;
+        margin: 15px auto 0px auto;
+        position: relative;
+        // border-radius: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 2px solid #ffffff;
+        // -webkit-box-shadow: 2px 14px 14px -11px rgba(0, 0, 0, 0.98);
+        // -moz-box-shadow: 2px 14px 14px -11px rgba(0, 0, 0, 0.98);
+        // box-shadow: 2px 14px 14px -11px rgba(0, 0, 0, 0.98);
+    }
+    .modal-title {
+        flex: 1 1 100%;        
+        text-align: center;
+        margin:0 !important;
+    }
+    h4 {
+        font-size: 18px;       
+        font-weight: 800 !important;
+        margin-bottom: 0.1em;
+        font-family: 'MyriadProRegular' !important;
+    }
+    .chat-modal-body {
+        button {
+            line-height: 26px !important;
+            z-index: 99;
+            position: absolute;
+            width: 70% !important;
+            background-color: #3B4149;
+            font-weight: 800 !important;
+            color:white !important;
+            border-radius: 20px !important;
+            height: 35px;
+            bottom: -17.5px;
+            left: 0; 
+            right: 0; 
+            margin-left: auto; 
+            margin-right: auto; 
+            letter-spacing: 1px;
+            text-align: center;
+            padding: 5px;
+            text-transform: uppercase;
+            // font-family: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"';
+            -webkit-box-shadow: 2px 14px 28px 1px rgba(0,0,0,0.28);
+            -moz-box-shadow: 2px 14px 28px 1px rgba(0,0,0,0.28);
+            box-shadow: 2px 14px 28px 1px rgba(0,0,0,0.28);
+            font-family: 'MyriadProRegular' !important;
+            font-weight:400;
+        }
+        .form-group {
+            margin-bottom: 35px !important;
+        }
+    }
+   
+    .chat-modal-footer {
+        background-color: #9D2832;
+        min-height: 60px;
+        position: relative;
+        padding:0 1rem;
+        justify-content: center;
+        border-bottom-right-radius: 1em; 
+        border-bottom-left-radius: 1em;
+        
+        p {
+            cursor: pointer;
+            color:white;
+            margin-top:25px;
+            font-size:12px !important;
+            text-decoration: underline;
+            font-family: 'MyriadProRegular' !important;
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+        }
+    }    
+}
+// .end-Premium-Modal .chat-modal-body button {
+//     width: 270px!important;
+// }
+.tip-Modal .modal-content {
+    height: 242px !important;
+    // width: 240px;
+}
+.modal-dialog.tip-Modal {
+    // max-width: 300px;
+    margin:1.75rem auto;
+}
+.tip-Modal {
+    .form-group {
+        input[type=number] {
+            margin: 0 auto;
+            width: 80px;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+    .alert {
+        width: 95%;
+        margin: 10px auto;
+    }
+    .alert.alert-danger {
+        padding:0;
+        border-radius: 5px;
+        background-color: #FDF1F4;
+        color:#E5A0A9;
+        border-color: #FDF1F4;
+    }
+}
+.modal-backdrop.show {
+    opacity: 0.3 !important;
+}
+.modal {
+    background: transparent !important;
+}
+body.modal-open #root {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+.tip-Modal .chat-modal-footer {
+    border-bottom-right-radius: 0.7em !important;
+    border-bottom-left-radius: 0.7em !important;
+}
+.tip-Modal .btn {
+    font-family: 'MyriadProRegular' !important;
+    font-weight:400;
+}
+.tip-Modal .alert.alert-danger {
+    color: #CD5664 !important;
+    font-size: 12px;
+}
+
+.online-user-details {
+    .back_btn {
+        display: none;
+        align-self: center;
+        .btn {
+            border: none;
+            color: grey;
+            padding: 0;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        .btn:before {
+            content: "❮";                
+            color: #d7d7d7;
+            font-size: 19px;
+        }
+    }
+    
+}
