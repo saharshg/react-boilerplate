@@ -1,10 +1,12 @@
 import api from './api';
 
-const login = (formData) => {
-  return ({
-    type: 'LOGIN',
-    payload: api.post('users/login', formData),
-  });
-};
+const login = name => ({
+  type: 'LOGIN',
+  payload: api.get(`people/?search=${name}`),
+});
+
+export const resetLogin = () => ({
+  type: 'RESET_LOGIN',
+});
 
 export default login;

@@ -3,15 +3,13 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  // Redirect,
+  Redirect,
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import App from './scenes/App/App';
-import Signup from './scenes/Signup/Signup';
 import Login from './scenes/Login/Login';
-import interceptor from './utils/interceptor';
-import ProfileContainer from './containers/ProfileContainer';
+import Search from './scenes/Search/Search';
+// import interceptor from './utils/interceptor';
 
 const loggedIn = () => {
   const { localStorage } = window;
@@ -32,15 +30,15 @@ const requireAuth = () => {
 };
 
 const PrivateRoute = ({ component: Component, authed, ...rest }) => {
-  interceptor();
+// interceptor();
   const { localStorage } = window;
-  const userId = localStorage.getItem('loggedInUserId');
+  const username = localStorage.getItem('loggedInUser');
   return (
     <Route
       {...rest}
-      render={props => (userId
-        ? <Component {...props} /> : <Component {...props} />)
-        // : <Redirect to={{ pathname: '/login', state: { from: props.location } }} />)
+      render={props => (username
+        ? <Component {...props} /> // : <Component {...props} />)
+        : <Redirect to={{ pathname: '/', state: { from: props.location } }} />)
       }
     />
   );
@@ -59,7 +57,7 @@ PrivateRoute.propTypes = {
 
 const renderRoutes = () => (
   <>
-
+    <Route exact path="/search" component={Search} />
   </>
 );
 
@@ -67,12 +65,8 @@ export default () => (
   <Router>
     <Suspense fallback="Loading...">
       <Switch>
-        <Route exact path="/" component={App} />
-        <Route exact path="/signup/owner" component={Signup} />
-        <Route exact path="/signup/buyer" component={Signup} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/profile" component={ProfileContainer} />
-        <PrivateRoute authed={requireAuth} path="/" component={renderRoutes} />
+        <Route exact path="/" component={Login} />
+        <PrivateRoute authed={requireAuth} component={renderRoutes} />
       </Switch>
     </Suspense>
   </Router>
