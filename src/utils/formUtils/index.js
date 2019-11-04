@@ -60,6 +60,7 @@ const renderField = (props) => {
     type = 'text',
     placeholder = '',
     disabled,
+    autoFocus = false,
     validationError,
     meta: { touched, error, warning },
   } = props;
@@ -77,6 +78,7 @@ const renderField = (props) => {
           type,
           placeholder,
           disabled,
+          autoFocus,
           meta: { touched, error, warning },
         }}
         disabled={disabled}

@@ -1,22 +1,21 @@
 export default function (state = [], action = {}) {
   switch (action.type) {
-    case 'SIGNUP_PENDING':
+    case 'PLANETS_PENDING':
       return {
         ...state,
         isLoading: true,
         error: false,
       };
 
-    case 'SIGNUP_FULFILLED':
+    case 'PLANETS_FULFILLED':
       return {
         ...state,
         isLoading: false,
-        success: true,
         data: action.payload.data,
         error: false,
       };
 
-    case 'SIGNUP_REJECTED':
+    case 'PLANETS_REJECTED':
       return {
         ...state,
         isLoading: false,

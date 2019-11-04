@@ -11,7 +11,6 @@ export default function (state = [], action = {}) {
       return {
         ...state,
         isLoading: false,
-        success: true,
         data: action.payload.data,
         error: false,
       };
@@ -21,6 +20,14 @@ export default function (state = [], action = {}) {
         ...state,
         isLoading: false,
         error: true,
+      };
+
+    case 'RESET_LOGIN':
+      return {
+        ...state,
+        isLoading: false,
+        data: {},
+        error: false,
       };
 
     default:

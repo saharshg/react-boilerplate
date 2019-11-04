@@ -12,7 +12,9 @@ module.exports = {
         "document": true,
         "describe": true,
         "jest": true,
-        "expect": true
+        "expect": true,
+        "FormData": true,
+        "localStorage": true,
     },
     "plugins": ["import"]
 };
